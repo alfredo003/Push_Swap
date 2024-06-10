@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sinlee <sinlee@student42.fr>               +#+  +:+       +#+         #
+#    By: achivela <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/16 04:09:49 by codespace         #+#    #+#              #
-#    Updated: 2023/07/17 14:37:20 by sinlee           ###   ########.fr        #
+#    Created: 2024/06/10 11:47:07 by achivela          #+#    #+#              #
+#    Updated: 2024/06/10 11:47:10 by achivela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ RM = rm -f
 INCLUDE = -Iincludes -Ilib/ft_printf/includes -Ilib/libft/includes
 CFLAGS = -Wall -Wextra -Werror -ggdb -fsanitize=address
 
-# Source files
 ALGO_DIR = algorithm
 STACK_DIR = stack
 MISC_DIR = misc
