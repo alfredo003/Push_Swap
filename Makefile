@@ -5,96 +5,94 @@
 #                                                     +:+ +:+         +:+      #
 #    By: achivela <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/06/10 11:47:07 by achivela          #+#    #+#              #
-#    Updated: 2024/06/10 11:47:10 by achivela         ###   ########.fr        #
+#    Created: 2024/06/19 17:32:04 by achivela          #+#    #+#              #
+#    Updated: 2024/06/19 17:32:08 by achivela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Compiler
+vpath %.c srcs
+vpath %.c bonus
+
 NAME = push_swap
-CC = gcc
+NAME_BONUS = checker
+
+CC = cc
+FLAGS = -O3 -g3 -L -lft
+CFLAGS = -Wall -Wextra -Werror -g 
+
+LIBFT = ./libft
+LIBS = /include
+
 RM = rm -f
-INCLUDE = -Iincludes -Ilib/ft_printf/includes -Ilib/libft/includes
-CFLAGS = -Wall -Wextra -Werror -ggdb -fsanitize=address
+FILES = push_swap.c \
+		input_error.c \
+		linked_list_a.c \
+		linked_list_b.c \
+		sorting.c \
+		moves_swap.c \
+		check_list.c \
+		sort_four.c \
+		sort_three.c \
+		sort_two.c \
+		moves_rotate.c \
+		moves_rev_rotate.c \
+		moves_push.c \
+		find_cheapest.c \
+		check_max_min_b.c \
+		check_max_min_a.c \
+		checks_cheapest.c \
+		free_all.c \
+		move_back.c \
+		new_min_stack_a.c \
+		new_max_stack_a.c \
+		new_elem_stack_a.c \
+		new_in_stack_b.c
 
-ALGO_DIR = algorithm
-STACK_DIR = stack
-MISC_DIR = misc
-BONUS = checker
-SRCS_DIR = srcs
-MAIN_FILES = main.c $(ALGO_DIR)/push_swap.c
-SRCS_FILES = $(ALGO_DIR)/sort_utils.c $(ALGO_DIR)/sort.c $(ALGO_DIR)/calculation.c $(STACK_DIR)/stack_utils.c $(STACK_DIR)/operations.c $(STACK_DIR)/misc_utils.c $(MISC_DIR)/check.c
-SRC_1 = $(addprefix $(SRCS_DIR)/,$(MAIN_FILES))
-SRC_2 = $(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
-BONUS_SRC = srcs/checker.c
+FILES_BONUS = checker_bonus.c \
+			  input_error_bonus.c \
+			  linked_list_a_bonus.c \
+			  free_all_bonus.c \
+			  linked_list_b_bonus.c \
+			  moves_push_bonus.c \
+			  moves_rev_rotate_bonus.c \
+			  moves_rotate_bonus.c \
+			  moves_swap_bonus.c
+OBJ_DIR = build
 
-# Object files
-OBJ_DIR = obj/
-OBJ_1 = ${SRC_1:.c=.o}
-OBJ_2 = ${SRC_2:.c=.o}
-BONUS_OBJ =${BONUS_SRC:.c=.o}
+OBJS = $(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))
+OBJS_BONUS = $(addprefix $(OBJ_DIR)/, $(FILES_BONUS:.c=.o))
 
-# Libraries
-LIBFT_DIR = lib/libft
-LIBFT = $(LIBFT_DIR)/libft.a
+green = \033[32m
+reset = \033[0m
 
-PRINTF_DIR = lib/ft_printf
-PRINTF = $(PRINTF_DIR)/libftprintf.a
+all: $(NAME)
 
-LIBS = -L$(LIBFT_DIR) -L$(PRINTF_DIR) -lft -lftprintf
+$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -I.$(LIBS) -c $< -o $@
 
-# Colors and text formatting
-RESET = \033[0m
-BOLD = \033[1m
-DIM = \033[2m
-UNDERLINE = \033[4m
-BLINK = \033[5m
-INVERT = \033[7m
-LIGHT_BLUE = \033[94m
-YELLOW = \033[93m
+$(NAME): $(OBJS)
+	make -C $(LIBFT)
+	$(CC) $(OBJS) $(CFLAGS) $(LIBFT)/libft.a -O3 -g3 -L -lft -o $(NAME)
 
-# Makefile rules
-# @${CC} -c $(CFLAGS) $(INCLUDE) $< -o ${<:.c=.o}
-.c.o:
-	@echo "$(BOLD)$(YELLOW)Compiling $<...$(RESET)"
-	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+bonus: $(NAME_BONUS)
 
-${NAME}: ${OBJ_1} ${OBJ_2} $(LIBFT) $(PRINTF)
-	@echo "$(BOLD)$(LIGHT_BLUE)Linking objects...$(RESET)"
-	@$(CC) $(CFLAGS) $(INCLUDES) ${OBJ_1} ${OBJ_2} $(LIBS) -o $(NAME)
-	@echo "$(BOLD)$(LIGHT_BLUE)$(NAME) created successfully!$(RESET)"
-	@echo "$(BOLD)Copyright Reserved. Lee Sin Liang.$(RESET)"
+$(NAME_BONUS): $(OBJS_BONUS)
+	make -C $(LIBFT)
+	$(CC) $(OBJS_BONUS) $(CFLAGS) $(LIBFT)/libft.a $(FLAGS) -o $(NAME_BONUS)
 
-${BONUS}: ${OBJ_2} ${BONUS_OBJ} $(LIBFT) $(PRINTF)
-	@echo "$(BOLD)$(LIGHT_BLUE)Linking objects...$(RESET)"
-	@${CC} ${CFLAGS} ${BONUS_OBJ} ${OBJ_2} $(LIBS) -o ${BONUS} ${INCLUDE}
-	@echo "$(BOLD)$(LIGHT_BLUE)$(NAME) created successfully!$(RESET)"
-	@echo "$(BOLD)Copyright Reserved. Lee Sin Liang.$(RESET)"
-
-$(LIBFT):
-	@echo "$(BOLD)$(LIGHT_BLUE)Building libft...$(RESET)"
-	@make -C $(LIBFT_DIR) -s
-
-$(PRINTF):
-	@echo "$(BOLD)$(LIGHT_BLUE)Building ft_printf...$(RESET)"
-	@make -C $(PRINTF_DIR) -s
-
-all: ${NAME}
-
-bonus: ${BONUS} 
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
 clean:
-	@echo "$(BOLD)$(LIGHT_BLUE)Cleaning objects...$(RESET)"
-	@${RM} ${OBJ_1} ${OBJ_2} ${BONUS_OBJ} ${NAME} ${BONUS}
-	@make -C $(LIBFT_DIR) clean -s
-	@make -C $(PRINTF_DIR) clean -s
+	make clean -C $(LIBFT)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	@echo "$(BOLD)$(LIGHT_BLUE)Cleaning $(NAME)...$(RESET)"
-	@${RM} ${OBJ_1} ${OBJ_2} ${BONUS_OBJ} ${NAME} ${BONUS}
-	@make -C $(LIBFT_DIR) fclean -s
-	@make -C $(PRINTF_DIR) fclean -s
+	make fclean -C $(LIBFT)
+	$(RM) $(NAME) $(NAME_BONUS)
 
-re: clean all
+re: fclean all
 
-.PHONY: all bonus clean fclean re bonus
+re_bonus: fclean bonus
+
+.PHONY: all clean fclean re bonus re_bonus
