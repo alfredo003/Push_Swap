@@ -3,16 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achivela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 09:49:43 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/05/01 10:10:03 by bedos-sa         ###   ########.fr       */
+/*   Created: 2024/06/19 18:25:56 by achivela          #+#    #+#             */
+/*   Updated: 2024/06/19 18:26:00 by achivela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// RETURN VALUE: The values returned are nonzero if the character c falls into 
-// the tested class, and a zero value if not.
-
 #include "libft.h"
 
 int	ft_isalpha(int c)

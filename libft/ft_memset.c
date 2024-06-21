@@ -1,16 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achivela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 15:37:14 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/05/04 08:29:12 by bedos-sa         ###   ########.fr       */
+/*   Created: 2024/05/16 17:56:19 by achivela          #+#    #+#             */
+/*   Updated: 2024/05/16 17:56:23 by achivela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// To use the elements inside the returned array s: (unsigned char *)s[i]
 
 #include "libft.h"
 

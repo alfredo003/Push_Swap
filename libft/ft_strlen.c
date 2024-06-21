@@ -1,17 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achivela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 15:29:17 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/11 17:42:19 by bedos-sa         ###   ########.fr       */
+/*   Created: 2024/05/16 17:56:19 by achivela          #+#    #+#             */
+/*   Updated: 2024/05/16 17:56:23 by achivela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// RETURN VALUE: The strlen() function returns the number of bytes in the 
-// string str.
 
 #include "libft.h"
 

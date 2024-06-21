@@ -11,10 +11,8 @@
 # **************************************************************************** #
 
 vpath %.c srcs
-vpath %.c bonus
 
 NAME = push_swap
-NAME_BONUS = checker
 
 CC = cc
 FLAGS = -O3 -g3 -L -lft
@@ -48,15 +46,6 @@ FILES = push_swap.c \
 		new_elem_stack_a.c \
 		new_in_stack_b.c
 
-FILES_BONUS = checker_bonus.c \
-			  input_error_bonus.c \
-			  linked_list_a_bonus.c \
-			  free_all_bonus.c \
-			  linked_list_b_bonus.c \
-			  moves_push_bonus.c \
-			  moves_rev_rotate_bonus.c \
-			  moves_rotate_bonus.c \
-			  moves_swap_bonus.c
 OBJ_DIR = build
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))
@@ -74,25 +63,19 @@ $(NAME): $(OBJS)
 	make -C $(LIBFT)
 	$(CC) $(OBJS) $(CFLAGS) $(LIBFT)/libft.a -O3 -g3 -L -lft -o $(NAME)
 
-bonus: $(NAME_BONUS)
-
-$(NAME_BONUS): $(OBJS_BONUS)
-	make -C $(LIBFT)
-	$(CC) $(OBJS_BONUS) $(CFLAGS) $(LIBFT)/libft.a $(FLAGS) -o $(NAME_BONUS)
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
 clean:
 	make clean -C $(LIBFT)
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	$(RM) $(OBJS)
 
 fclean: clean
 	make fclean -C $(LIBFT)
-	$(RM) $(NAME) $(NAME_BONUS)
+	$(RM) $(NAME)
 
 re: fclean all
 
-re_bonus: fclean bonus
 
-.PHONY: all clean fclean re bonus re_bonus
+.PHONY: all clean fclean

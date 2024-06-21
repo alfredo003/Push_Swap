@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achivela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/05 15:19:26 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/05/18 18:06:42 by bedos-sa         ###   ########.fr       */
+/*   Created: 2024/05/16 17:34:16 by achivela          #+#    #+#             */
+/*   Updated: 2024/05/16 18:19:05 by achivela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)

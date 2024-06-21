@@ -1,18 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achivela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 16:36:19 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/07/11 17:43:25 by bedos-sa         ###   ########.fr       */
+/*   Created: 2024/05/16 17:56:19 by achivela          #+#    #+#             */
+/*   Updated: 2024/05/16 17:56:23 by achivela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// strlcpy() copies up to size - 1 characters from the string src to dest, 
-// NUL-terminating the result if size is not 0. the strlcpy() function 
-// returns the length of the string it tried to create.
 
 #include "libft.h"
 

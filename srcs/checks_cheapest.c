@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   checks_cheapest.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedos-sa <bedos-sa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achivela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 16:18:11 by bedos-sa          #+#    #+#             */
-/*   Updated: 2023/08/31 16:19:23 by bedos-sa         ###   ########.fr       */
+/*   Created: 2024/06/19 17:54:33 by achivela          #+#    #+#             */
+/*   Updated: 2024/06/19 17:54:42 by achivela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "push_swap.h"
 
 void	check_moves(t_stacks *stacks)
