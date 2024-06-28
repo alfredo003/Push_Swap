@@ -48,8 +48,7 @@ FILES = push_swap.c \
 
 OBJ_DIR = build
 
-OBJS = $(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))
-OBJS_BONUS = $(addprefix $(OBJ_DIR)/, $(FILES_BONUS:.c=.o))
+OBJS = $(addprefix $(OBJ_DIR)/, $(FILES:.c=.o)) 
 
 green = \033[32m
 reset = \033[0m
