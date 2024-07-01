@@ -50,15 +50,3 @@ Para iniciar este projeto, você pode consultar os seguintes recursos:
 - [Algoritmo Mergesort: Wikipédia](https://en.wikipedia.org/wiki/Merge_sort)
 
 Sinta-se à vontade para explorar mais recursos e implementar otimizações adicionais para aumentar a eficiência do seu algoritmo Push Swap.
-
-### Autor
-
-Criado por Lee Sin Liang
-
-### Reconhecimentos
-
-Este projeto foi concluído como parte do currículo da 42 School.
-
----
-
-Essas alterações visam tornar o README mais claro e informativo, destacando a implementação, os algoritmos utilizados e os recursos recomendados para aprender mais sobre o projeto.
